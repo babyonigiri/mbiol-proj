@@ -1,0 +1,24 @@
+#!/bin/sh
+#SBATCH --nodes=1
+#SBATCH --ntasks=24
+#SBATCH --cluster=all
+#SBATCH --partition=medium
+#SBATCH --time=48:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=XXX
+
+# Prepare the environment
+module purge
+module load RAxML/8.2.12-gompi-2021b-hybrid-avx2
+
+# Run RAxML
+raxmlHPC -s /data/zool-bactgenomics/XXX/panaroo/panaroo_output/core_gene_alignment_filtered.aln \
+         -n cc269_raxml \
+         -m GTRGAMMA -# 100 \
+         -f a \
+         -N 5 \
+         -x 12345 \ # random seed for reproducibility
+         -p 12345 \ # random seed for reproducibility
+         -T 24 \ # number of threads must match number of tasks
+         -w /data/zool-bactgenomics/XXX/raxml # define the output directory
+
