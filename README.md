@@ -1,2 +1,11 @@
-# mbiol-proj
-Bioinformatics pipeline scripts for MBiol project
+# Bioinformatics pipeline scripts
+
+## Bakta
+
+## Panaroo
+
+## RAxML 
+
+## Unitig Caller
+
+## Pyseer
