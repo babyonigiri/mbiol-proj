@@ -7,8 +7,8 @@
 #SBATCH --time=48:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=XXX
-#SBATCH --output=/data/zool-bactgenomics/kebl7130/bakta/outputs/bakta_%A_%a.out
-#SBATCH --error=/data/zool-bactgenomics/kebl7130/bakta/outputs/bakta_%A_%a.err
+#SBATCH --output=/data/zool-bactgenomics/XXX/bakta/outputs/bakta_%A_%a.out
+#SBATCH --error=/data/zool-bactgenomics/XXX/bakta/outputs/bakta_%A_%a.err
 
 # Prepare the environment
 module purge
@@ -30,10 +30,10 @@ GENOME_FILE="${GENOME_PATH}${GENOME}"
 if [ -f "$GENOME_FILE" ]; then
 
         # Run Bakta with the full path to the genome
-        bakta --db /data/zool-bactgenomics/kebl7130/bakta/db \ #path to the downloaded Bakta database
+        bakta --db /data/zool-bactgenomics/XXX/bakta/db \ #path to the downloaded Bakta database
         --prefix ${GENOME/.f*/} \ 
         --force "$GENOME_FILE" \
-        --output /data/zool-bactgenomics/kebl7130/bakta/cc269_annotations/${GENOME/.f*/}_bakta_out
+        --output /data/zool-bactgenomics/XXX/bakta/cc269_annotations/${GENOME/.f*/}_bakta_out
 
 else
         # Print an error message and skip this file
