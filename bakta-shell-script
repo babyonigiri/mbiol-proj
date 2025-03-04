@@ -30,8 +30,8 @@ GENOME_FILE="${GENOME_PATH}${GENOME}"
 if [ -f "$GENOME_FILE" ]; then
 
         # Run Bakta with the full path to the genome
-        bakta --db /data/zool-bactgenomics/kebl7130/bakta/db \
-        --prefix ${GENOME/.f*/} \
+        bakta --db /data/zool-bactgenomics/kebl7130/bakta/db \ #path to the downloaded Bakta database
+        --prefix ${GENOME/.f*/} \ 
         --force "$GENOME_FILE" \
         --output /data/zool-bactgenomics/kebl7130/bakta/cc269_annotations/${GENOME/.f*/}_bakta_out
 
