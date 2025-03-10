@@ -17,10 +17,10 @@ source activate $bakta
 conda activate /data/zool-bactgenomics/XXX/bakta
 
 # Define the path to the directory with the genome .fas files
-GENOME_PATH="/data/zool-bactgenomics/kebl7130/bakta/0_15_17_fas/"
+GENOME_PATH="/data/zool-bactgenomics/XXX/bakta/0_15_17_fas/"
 
 # Read the .txt file containing a list of the genome files (only filenames, no paths)
-GENOME_LIST=/data/zool-bactgenomics/kebl7130/bakta/0_15_17_genome_list.txt
+GENOME_LIST=/data/zool-bactgenomics/XXX/bakta/0_15_17_genome_list.txt
 GENOME=$(sed -n "${SLURM_ARRAY_TASK_ID}p" $GENOME_LIST)
 
 # Construct the full path to the genome file
